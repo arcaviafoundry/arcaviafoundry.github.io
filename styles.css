@@ -1,0 +1,136 @@
+:root {
+  color-scheme: dark;
+  --background: #160f0e;
+  --panel: #201513;
+  --cream: #fff5e9;
+  --soft: #d9c5b9;
+  --ember: #ffb76b;
+  --rule: #48322b;
+  font-family: "Trebuchet MS", system-ui, sans-serif;
+  background: var(--background);
+  color: var(--cream);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; text-underline-offset: .25em; }
+img { display: block; max-width: 100%; }
+button { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--ember); outline-offset: 4px; }
+.shell { width: min(100% - 64px, 1220px); margin-inline: auto; }
+.skip { position: absolute; z-index: 5; padding: 12px; background: var(--panel); transform: translateY(-120%); }
+.skip:focus { transform: translateY(0); }
+
+.site-header {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #8b3d2a;
+  background:
+    radial-gradient(ellipse at 9% 0%, #943521 0%, transparent 45%),
+    linear-gradient(110deg, #772815, #611d17 48%, #481315);
+}
+.header-inner, .site-nav, .footer-inner { display: flex; align-items: center; }
+.header-inner, .footer-inner { justify-content: space-between; gap: 20px; }
+.site-nav { gap: clamp(13px, 3vw, 34px); }
+.site-nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-weight: 650; }
+.site-nav a:hover, .privacy-link:hover, .site-footer a:hover { color: var(--ember); }
+.brand { position: relative; display: block; width: 160px; height: 106px; flex: none; overflow: hidden; }
+.brand img {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  height: auto; width: 288px; max-width: none;
+  filter: hue-rotate(-7deg) saturate(1.12) brightness(1.06) contrast(1.07)
+    drop-shadow(0 2px 3px #290d0ebf);
+}
+.language-toggle {
+  background: transparent;
+  border: 1px solid #ba6b56;
+  border-radius: 6px;
+  color: var(--cream);
+  min-height: 44px;
+  min-width: 44px;
+  font-weight: 750;
+  cursor: pointer;
+}
+.language-toggle:hover { background: #822c22; }
+
+.hero {
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #190b11 2%, #190b11ed 25%, #2610198c 52%, #26101915 79%),
+    linear-gradient(0deg, #1a0d13c9, transparent 52%),
+    url("bogaz.jpg") center 52% / cover no-repeat, #2b1619;
+  border-bottom: 1px solid #693929;
+}
+.hero-inner { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); min-height: 560px; align-items: center; }
+.hero-copy { position: relative; z-index: 1; padding-block: 66px 72px; }
+.label { color: var(--ember); font-size: .82rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 750; margin: 0 0 14px; }
+h1, h2, p { margin: 0; }
+h1, h2 { font-family: system-ui, sans-serif; }
+h1 { font-size: clamp(2.5rem, 5.8vw, 5.7rem); line-height: .98; letter-spacing: -.065em; font-weight: 900; }
+h1 span { display: block; }
+h1 .accent { color: var(--ember); }
+.hero-description { font-size: clamp(1rem, 1.5vw, 1.22rem); line-height: 1.6; max-width: 37ch; margin-top: 25px; color: #ffedde; }
+.hero-character {
+  align-self: end;
+  justify-self: center;
+  height: clamp(375px, 44vw, 530px);
+  width: auto;
+  max-width: 112%;
+  object-fit: contain;
+  object-position: bottom;
+  margin-bottom: -11px;
+  filter: drop-shadow(0 18px 20px #1a0815bb);
+}
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 24px; margin-top: 25px; }
+.store-link {
+  display: inline-flex; align-items: center; gap: 9px; padding: 12px 16px; min-height: 46px;
+  border: 1px solid transparent; border-radius: 7px; background: var(--ember);
+  color: #291405; text-decoration: none; font-weight: 800;
+}
+.store-link:hover { background: #ffd09c; }
+.play-mark { width: 12px; height: 14px; background: currentColor; clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.privacy-link { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; color: var(--soft); }
+
+.other-game {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center; gap: clamp(26px, 5vw, 65px); padding-block: 62px;
+}
+.game-picture { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--panel); }
+.game-picture img { width: 100%; height: auto; }
+.game-copy h2 { max-width: 20ch; font-size: clamp(1.8rem, 3.5vw, 3.15rem); line-height: 1.04; letter-spacing: -.045em; }
+.game-copy > p:not(.label) { color: var(--soft); line-height: 1.65; margin-top: 16px; max-width: 43ch; }
+.store-secondary { border-color: #8e5c37; color: var(--cream); background: transparent; }
+.store-secondary:hover { border-color: var(--ember); background: #392117; }
+.site-footer { border-top: 1px solid var(--rule); background: var(--panel); }
+.footer-inner { min-height: 112px; padding-block: 24px; flex-wrap: wrap; }
+.footer-inner .label { margin-bottom: 4px; }
+.footer-name { font-size: 1.2rem; font-weight: 800; }
+.site-footer a { color: var(--soft); overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+  .shell { width: calc(100% - 40px); }
+  .hero {
+    background:
+      linear-gradient(180deg, #190b11ca, #190b11a8 51%, #190b1122 72%, #1a0d13b8),
+      url("bogaz.jpg") 57% center / cover no-repeat, #2b1619;
+  }
+  .hero-inner { min-height: 0; grid-template-columns: 1fr; }
+  .hero-copy { padding-block: 38px 3px; }
+  .hero-character { height: clamp(218px, 66vw, 350px); max-width: 100%; justify-self: end; }
+  .other-game { grid-template-columns: 1fr; max-width: 520px; padding-block: 36px; }
+}
+
+@media (max-width: 390px) {
+  .shell { width: calc(100% - 32px); }
+  .header-inner { gap: 10px; }
+  .brand { width: 126px; height: 82px; }
+  .brand img { width: 218px; }
+  .site-nav { gap: 10px; font-size: .88rem; }
+}
+
+@media (max-width: 360px) {
+  .header-inner { gap: 8px; }
+  .brand { width: 110px; }
+  .brand img { width: 201px; }
+  .site-nav { gap: 8px; font-size: .82rem; }
+}

@@ -1,35 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arcavia Foundry</title>
-<style>
-  :root { color-scheme: dark; }
-  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:#050a12; color:#e9e6df; font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; text-align:center; }
-  main { max-width: 640px; padding: 40px 24px; }
-  h1 { font-size: 2rem; letter-spacing: .08em; margin: 0 0 4px; }
-  .sub { color:#e5a04a; letter-spacing:.3em; font-size:.85rem; margin:0 0 32px; }
-  h2 { font-size: 1.15rem; margin: 28px 0 6px; }
-  a { color:#e5b33a; }
-  p { margin: 6px 0; color:#b9c3cc; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5f1c15">
+  <meta name="description" content="Arcavia Foundry’nin mobil oyunlarını keşfet: Makarayız Abi: Hamam Böceği ve Çiğ Köfte Oyunu: Yemek Yapma.">
+  <title>Arcavia Foundry · Mobil Oyunlar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="language.js" defer></script>
 </head>
 <body>
-<main>
-  <h1>ARCAVIA</h1>
-  <p class="sub">FOUNDRY</p>
+  <a class="skip" href="#oyunlar" data-en="Skip to games">Oyunlara geç</a>
+  <header class="site-header" id="baslangic">
+    <div class="shell header-inner">
+      <a class="brand" href="#baslangic" aria-label="Arcavia Foundry">
+        <img src="arcavia-foundry-gold.png" width="1882" height="836" alt="">
+      </a>
+      <nav class="site-nav" aria-label="Ana menü" data-en-label="Main navigation">
+        <a href="#oyunlar" data-en="Games">Oyunlar</a>
+        <a href="#destek" data-en="Support">Destek</a>
+        <button class="language-toggle" type="button" lang="en" aria-label="Switch to English" hidden>EN</button>
+      </nav>
+    </div>
+  </header>
 
+  <main id="oyunlar">
+    <section class="hero" aria-labelledby="makarayiz-title">
+      <div class="hero-inner shell">
+        <div class="hero-copy">
+          <p class="label" data-en="Featured game">Öne çıkan oyun</p>
+          <h1 id="makarayiz-title">
+            <span>Makarayız Abi:</span>
+            <span class="accent" data-en="Cockroach Game">Hamam Böceği</span>
+          </h1>
+          <p class="hero-description" data-en="Hit the streets of Istanbul as Hamamcan. Find a job, face off against the diva and race through traffic in HamamRacer.">Hamamcan’la İstanbul sokaklarına çık. İş bul, sahnede divayla kapış ve HamamRacer’da trafiğe karış.</p>
+          <div class="actions">
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.arcavia.hamambocegi&amp;hl=tr" data-store>
+              <span class="play-mark" aria-hidden="true"></span><span data-en="Get it on Google Play">Google Play’de aç</span>
+            </a>
+            <a class="privacy-link" href="https://makarayiz-abi-privacy.festivegiraffe128.chatgpt.site/" data-en="Privacy policy">Gizlilik politikası</a>
+          </div>
+        </div>
+        <img class="hero-character" src="hamamcan.png" width="1128" height="1394" alt="" fetchpriority="high">
+      </div>
+    </section>
 
-  <h2>Makarayız Abi: Hamam Böceği</h2>
-  <p>İstanbul sokaklarında geçen komik bir hamam böceği oyunu.<br>
-     <em>Makarayız Abi: Cockroach Game</em> — a funny cockroach game set in Istanbul.</p>
-  <p><a href="https://play.google.com/store/apps/details?id=com.arcavia.hamambocegi">Google Play</a> ·
-     <a href="https://makarayiz-abi-privacy.festivegiraffe128.chatgpt.site/">Gizlilik Politikası / Privacy Policy</a></p>
+    <section class="other-game shell" aria-labelledby="cig-kofte-title">
+      <div class="game-picture">
+        <img src="cig-kofte.png" width="1024" height="500" loading="lazy" alt="Ustam Çiğköfte tezgâhı, çiğ köfte dürümü ve telefon ekranında oynanış" data-en-alt="The Ustam Çiğköfte counter, a çiğ köfte wrap and gameplay on a phone">
+      </div>
+      <div class="game-copy">
+        <p class="label" data-en="Cooking simulation">Yemek yapma simülasyonu</p>
+        <h2 id="cig-kofte-title" data-en="Ustam Çiğköfte: Cooking Game">Çiğ Köfte Oyunu: Yemek Yapma</h2>
+        <p data-en="Run your own çiğ köfte shop. Choose the right ingredients, roll the wraps and serve every order before time runs out.">Kendi çiğ köfte dükkânını işlet. Doğru malzemeleri seç, dürümleri sar ve siparişleri süre dolmadan yetiştir.</p>
+        <div class="actions">
+          <a class="store-link store-secondary" href="https://play.google.com/store/apps/details?id=tr.ustanin.cigkofte&amp;hl=tr" data-store>
+            <span class="play-mark" aria-hidden="true"></span><span data-en="Get it on Google Play">Google Play’de aç</span>
+          </a>
+          <a class="privacy-link" href="https://ustam-cigkofte-privacy.clearflea128.chatgpt.site/" data-en="Privacy policy">Gizlilik politikası</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-
-  <h2>İletişim / Contact</h2>
-  <p>arcaviafoundry.support@gmail.com</p>
-</main>
+  <footer class="site-footer" id="destek">
+    <div class="shell footer-inner">
+      <div>
+        <p class="label" data-en="Support">Destek</p>
+        <p class="footer-name">Arcavia Foundry</p>
+      </div>
+      <a href="mailto:arcaviafoundry.support@gmail.com">arcaviafoundry.support@gmail.com</a>
+    </div>
+  </footer>
 </body>
 </html>
